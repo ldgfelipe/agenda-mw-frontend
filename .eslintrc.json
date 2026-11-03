@@ -1,0 +1,33 @@
+// .eslintrc.json (Ejemplo)
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "vue/setup-compiler-macros": true // <--- AÑADIR/ASEGURAR ESTA LÍNEA DENTRO DE "env"
+  },
+  // ...
+  "globals": {
+    "defineProps": "readonly", // Opcional, pero explícito
+    "defineEmits": "readonly" // Opcional, pero explícito
+    // ...
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "extends": [
+    "plugin:vue/vue3-essential",
+    "eslint:recommended"
+  ],
+  
+  "rules": {
+    // 🔑 DESACTIVAR LA REGLA PROBLEMÁTICA
+    "vue/valid-v-slot": "off", 
+    "no-console": "off" ,
+    "no-irregular-whitespace": "off",
+    "vue/multi-word-component-names": ["error", {
+      "ignores": ["Medicamentos","Expediente", "Pacientes", "Recetas", "Index"] // Añade aquí los que necesites
+    }]
+    // ... otras reglas
+  }
+}
